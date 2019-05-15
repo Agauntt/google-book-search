@@ -8,7 +8,12 @@ const app = express();
 
 // Bodyparser Middleware
 app.use(bodyParser.json());
-
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 // Connect to mongoose
 mongoose
     .connect(process.env.MONGODB_URI || "mongodb://localhost/google_books", { useNewUrlParser: true })
@@ -18,6 +23,6 @@ mongoose
 // Use Routes
 app.use("/api/books", books);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => console.log(`server connected on port ${PORT}`));

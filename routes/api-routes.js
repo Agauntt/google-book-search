@@ -22,8 +22,8 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
     const newBook = new Book({
         title: req.body.title,
-        authors: req.body.authors,
-        description: req.body.desc,
+        author: req.body.author,
+        description: req.body.description,
         image: req.body.image,
         link: req.body.link
     });

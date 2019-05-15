@@ -1,0 +1,25 @@
+.title {
+  text-align: center;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.search-field {
+  text-align: center;
+  display: inline-flex;
+  align-content: center;
+  margin-left: 40%;
+}
+
+#search {
+  align-content: center;
+  height: 30px;
+  width: 200px;
+}
+
+form {
+  text-align: center;
+}
